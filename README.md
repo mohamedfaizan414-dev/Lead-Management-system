@@ -6,9 +6,7 @@ A full-stack Lead Management application built with React, Node.js/Express, and 
 
 ## Live Demo
 
-> Add your deployed URL here after deployment
-
----
+https://project-r394i-hog958qvi-faizan7.vercel.app/
 
 ## Tech Stack
 
