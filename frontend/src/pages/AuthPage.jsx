@@ -83,7 +83,7 @@ export default function AuthPage() {
                 type="email"
                 value={form.email}
                 onChange={handleChange}
-                placeholder="your@company.com"
+                placeholder="yours@company.com"
                 required
                 className="w-full bg-surface border border-border text-bright rounded-xl px-4 py-3 text-sm outline-none focus:border-accent/60 focus:ring-1 focus:ring-accent/20 transition-all placeholder:text-muted"
               />
