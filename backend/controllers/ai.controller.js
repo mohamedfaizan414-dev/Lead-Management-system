@@ -10,7 +10,7 @@ async function summarizeNotes(req, res) {
         }
 
       
-        const notesText = notes.map((n, i) => `${i + 1}. ${n.content}`).join('\n');
+        
 
         
         const chatCompletion = await groq.chat.completions.create({
@@ -20,7 +20,7 @@ async function summarizeNotes(req, res) {
             temperature: 0.3,
             messages: [{
                 role: 'user',
-                content: `Summarize the following sales lead notes in 3-4 sentences. Focus on key interactions, current status, and next steps:\n\n${notesText}`
+                content: `Summarize the following sales lead notes in 3-4 sentences. Focus on key interactions, current status, and next steps:\n\n${notes}`
             }]
         });
 
