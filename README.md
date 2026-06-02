@@ -6,9 +6,7 @@ A full-stack Lead Management application built with React, Node.js/Express, and 
 
 ## Live Demo
 
-> Add your deployed URL here after deployment
-
----
+https://project-r394i-hog958qvi-faizan7.vercel.app/
 
 ## Tech Stack
 
@@ -17,8 +15,8 @@ A full-stack Lead Management application built with React, Node.js/Express, and 
 | Frontend  | React 18, Vite, Tailwind CSS v3     |
 | Backend   | Node.js, Express.js                 |
 | Database  | MongoDB with Mongoose               |
-| Auth      | JWT (stored in HTTP-only cookies)   |
-| AI        | Anthropic Claude (claude-sonnet-4)  |
+| Auth      | JWT    |
+| AI        | Groq  |
 
 ---
 
