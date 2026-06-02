@@ -1,5 +1,5 @@
 const jwt = require("jsonwebtoken")
-const userModel = require("../model/user.model")
+
 
 module.exports = async function auth(req, res, next) {
   try {
@@ -14,11 +14,6 @@ module.exports = async function auth(req, res, next) {
 
     const decoded = jwt.verify(token, process.env.JWT_SECRET)
 
-    const user = await userModel.findById(decoded.id)
-
-    if (!user) return res.status(401).json({ message: "Invalid token" })
-
-    req.user = user
     next()
   } catch (err) {
     console.log(err)
