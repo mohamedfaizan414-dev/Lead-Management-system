@@ -11,7 +11,7 @@ const connectDB = require('./lib/db')
 const authRoutes = require("./routes/auth.route")
 const leadRoutes = require('./routes/lead.routes')
 const aiRoutes = require('./routes/ai.routes')
-const healthRoute = require('./routes/healthRoute')
+const healthRoute = require('./routes/health.routes')
 
 connectDB()
 app.use(cors({

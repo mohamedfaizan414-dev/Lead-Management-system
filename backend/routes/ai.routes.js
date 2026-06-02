@@ -1,9 +1,9 @@
 const express = require('express')
-const route = express.Router()
-const aiController = require('../controllers/ai.controllers')
-const authMiddleware = require('../middleware/auth.middleware')
+const router = express.Router()
+const auth = require('../middleware/auth.middleware')
+const { summarizeNotes } = require('../controllers/ai.controller')
 
-route.use(authMiddleware)
-route.post('/summarize', aiController.summarizeNotes)
+router.use(auth)
+router.post('/summarize', summarizeNotes)
 
-module.exports = route
+module.exports = router

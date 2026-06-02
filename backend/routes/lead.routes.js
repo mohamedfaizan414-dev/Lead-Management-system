@@ -1,14 +1,15 @@
 const express = require('express')
-const route = express.Router()
-const leadController = require('../controllers/lead.controllers')
-const authMiddleware = require('../middleware/auth.middleware')
+const router = express.Router()
+const auth = require('../middleware/auth.middleware')
+const { createLead, getAllLeads, getLeadById, updateLead, deleteLead, addNote, deleteNote } = require('../controllers/lead.controller')
 
-route.use(authMiddleware)
-route.post('/create', leadController.createLead)
-route.get('/all', leadController.getAllLeads)
-route.get('/:id', leadController.getLeadById)
-route.patch('/update/:id', leadController.updateLead)
-route.delete('/delete/:id', leadController.deleteLead)
-route.post('/:id/notes', leadController.addNote)
+router.use(auth)
+router.post('/', createLead)
+router.get('/', getAllLeads)
+router.get('/:id', getLeadById)
+router.patch('/:id', updateLead)
+router.delete('/:id', deleteLead)
+router.post('/:id/notes', addNote)
+router.delete('/:id/notes/:noteId', deleteNote)
 
-module.exports = route
+module.exports = router
