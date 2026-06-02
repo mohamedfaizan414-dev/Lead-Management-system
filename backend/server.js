@@ -23,7 +23,7 @@ app.use(express.json())
 app.use('/api/auth',authRoutes);
 app.use('/api/lead',leadRoutes);
 app.use('/api/ai', aiRoutes);
-app.use('/api/check',healthRoute)
+app.use('/api/check',healthRoute);
 
 app.listen(process.env.PORT,()=>{
     console.log('Server Started')
