@@ -15,8 +15,8 @@ https://project-r394i-hog958qvi-faizan7.vercel.app/
 | Frontend  | React 18, Vite, Tailwind CSS v3     |
 | Backend   | Node.js, Express.js                 |
 | Database  | MongoDB with Mongoose               |
-| Auth      | JWT (stored in HTTP-only cookies)   |
-| AI        | Anthropic Claude (claude-sonnet-4)  |
+| Auth      | JWT    |
+| AI        | Groq  |
 
 ---
 
