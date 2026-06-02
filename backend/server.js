@@ -15,7 +15,7 @@ const healthRoute = require('./routes/health.routes')
 
 connectDB()
 app.use(cors({
-    origin: 'https://project-r394i-hog958qvi-faizan7.vercel.app', 
+    origin: 'https://project-r394i-git-master-faizan7.vercel.app', 
     credentials: true                
 }));
 app.use(cookieparser())
