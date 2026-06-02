@@ -15,7 +15,7 @@ const healthRoute = require('./routes/healthRoute')
 
 connectDB()
 app.use(cors({
-    origin: 'http://localhost:5173', 
+    origin: 'https://leadmng.netlify.app/', 
     credentials: true                
 }));
 app.use(cookieparser())
