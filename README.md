@@ -6,7 +6,7 @@ A full-stack Lead Management application built with React, Node.js/Express, and 
 
 ## Live Demo
 
-https://project-r394i-hog958qvi-faizan7.vercel.app/
+https://project-r394i-git-master-faizan7.vercel.app/
 
 ## Tech Stack
 
