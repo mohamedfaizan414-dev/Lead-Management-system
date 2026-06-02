@@ -15,7 +15,7 @@ async function summarizeNotes(req, res) {
         
         const chatCompletion = await groq.chat.completions.create({
            
-            model: 'llama-3.3-70b-specdec',
+            model: 'llama-3.3-70b-versatile',
             max_tokens: 512,
             temperature: 0.3,
             messages: [{
