@@ -16,9 +16,16 @@ async function register(req, res) {
 
     const hash = await bcrypt.hash(password, 10)
     const user = await User.create({ username, email, password: hash })
+    
+    
     const token = jwt.sign({ id: user._id }, process.env.JWT_SECRET, { expiresIn: '7d' })
-    res.cookie('token', token, { httpOnly: true, maxAge: 7 * 24 * 60 * 60 * 1000 })
-    res.status(201).json({ message: 'Registration successful', user: { id: user._id, username: user.username, email: user.email } })
+    
+  
+    res.status(201).json({ 
+      message: 'Registration successful', 
+      token, 
+      user: { id: user._id, username: user.username, email: user.email } 
+    })
   } catch (err) {
     res.status(500).json({ message: 'Server error', error: err.message })
   }
@@ -35,17 +42,23 @@ async function login(req, res) {
     const valid = await bcrypt.compare(password, user.password)
     if (!valid) return res.status(401).json({ message: 'Invalid email or password' })
 
+   
     const token = jwt.sign({ id: user._id }, process.env.JWT_SECRET, { expiresIn: '7d' })
-    res.cookie('token', token, { httpOnly: true, maxAge: 7 * 24 * 60 * 60 * 1000 })
-    res.status(200).json({ message: 'Login successful', user: { id: user._id, username: user.username, email: user.email } })
+    
+    
+    res.status(200).json({ 
+      message: 'Login successful', 
+      token, 
+      user: { id: user._id, username: user.username, email: user.email } 
+    })
   } catch (err) {
     res.status(500).json({ message: 'Server error', error: err.message })
   }
 }
 
+
 function logout(req, res) {
-  res.clearCookie('token')
-  res.status(200).json({ message: 'Logged out successfully' })
+  res.status(200).json({ message: 'Logged out successfully. Please remove the token from your client storage.' })
 }
 
 async function me(req, res) {
